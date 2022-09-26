@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Register</h1>
+
+    <form actio method="post">
+        {% csrf_token %}
+        {{form.first_name.label}}<br>
+        {{form.first_name}}<br><br>
+
+        {{form.last_name.label}}<br>
+        {{form.last_name}}<br><br>
+
+        {{form.username.label}}<br>
+        {{form.username}}<br><br>
+
+        {{form.email.label}}<br>
+        {{form.email}}<br><br>
+
+        {{form.password1.label}}<br>
+        {{form.password1}}<br><br>
+
+        {{form.password2.label}}<br>
+        {{form.password2}}<br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br><a href="{% url 'login-page' %}">Already have an account?</a>
+{% endblock %}
